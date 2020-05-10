@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 
 module.exports = function(req, res, next) {
 
-    //leer toke de header
+    //leer token del header
     
     //revisar si no hay token
 
