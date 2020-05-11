@@ -2,6 +2,8 @@ import React, { useContext, useEffect } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import AuthContext from '../../context/autenticacion/authContext';
 
+//hight orden component sintaxis: component: Component, el componente de ruta privada tiene otro componente dentro
+
 const RutaPrivada = ({ component: Component, ...props  }) => {
 
     const authContext = useContext(AuthContext);

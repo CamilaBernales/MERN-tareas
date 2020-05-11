@@ -13,13 +13,13 @@ const Tarea = ({tarea}) => {
     const { eliminarTarea, obtenerTareas, actualizarTarea, guardarTareaActual } = tareasContext;
 
 
-    // Extraer el proyecto
+    // Extraer el proyecto 
     const [proyectoActual] = proyecto;
- 
     // Función que se ejecuta cuando el usuario presiona el btn de eliminar tarea
     const tareaEliminar = id => {
+        console.log(proyectoActual)
         eliminarTarea(id, proyectoActual._id);
-        obtenerTareas(proyectoActual.id)
+        obtenerTareas(proyectoActual._id);
     }
 
     // Función que modifica el estado de las tareas

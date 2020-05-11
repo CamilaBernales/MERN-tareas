@@ -289,15 +289,14 @@ aside  {
 }
 
 .form-usuario {
-    background-color: var(--gris2);
-    height: 100vh;
-    min-height: 800px;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .contenedor-form {
+  overflow: hidden;
     padding: 5rem 3rem;
     max-width: 500px;
     width: 95%;

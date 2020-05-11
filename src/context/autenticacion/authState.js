@@ -29,7 +29,7 @@ const AuthState = props => {
         try {
 
             const respuesta = await clienteAxios.post('/api/usuarios', datos);
-            console.log(respuesta.data);
+            // console.log(respuesta.data);
 
             dispatch({
                 type: REGISTRO_EXITOSO,
@@ -56,7 +56,8 @@ const AuthState = props => {
     const usuarioAutenticado = async () => {
         const token = localStorage.getItem('token');
         if(token) {
-            tokenAuth(token);
+            //funcion para enviar el token por headers
+             tokenAuth(token);
         }
 
         try {
@@ -68,7 +69,7 @@ const AuthState = props => {
             });
 
         } catch (error) {
-            console.log(error.response);
+            //console.log(error.response);
             dispatch({
                 type: LOGIN_ERROR
             })
@@ -79,7 +80,7 @@ const AuthState = props => {
     const iniciarSesion = async datos => {
         try {
             const respuesta = await clienteAxios.post('/api/auth', datos);
-            
+            // console.log(respuesta)
             dispatch({
                 type: LOGIN_EXITOSO,
                 payload: respuesta.data
@@ -88,7 +89,7 @@ const AuthState = props => {
             // Obtener el usuario
             usuarioAutenticado();
         } catch (error) {
-            console.log(error.response.data.msg);
+            // console.log(error);
             const alerta = {
                 msg: error.response.data.msg,
                 categoria: 'alerta-error'

@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import Proyecto from './Proyecto';
 import proyectoContext from '../../context/proyectos/proyectoContext';
 import AlertaContext from '../../context/alertas/alertaContext';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 const ListadoProyectos = () => {
 

@@ -39,12 +39,12 @@ const ProyectoState = props => {
     const obtenerProyectos = async () => {
         try {
             const resultado = await clienteAxios.get('/api/proyectos');
-
             dispatch({
                 type: OBTENER_PROYECTOS,
                 payload: resultado.data.proyectos
             })
         } catch (error) {
+            console.log(error);
             const alerta = {
                 msg: 'Hubo un error',
                 categoria: 'alerta-error'
