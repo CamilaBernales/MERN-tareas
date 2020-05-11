@@ -17,7 +17,7 @@ exports.autenticarUsuario = async (req, res) => {
         //revisar que sea un usuario registrado
         let usuario = await Usuario.findOne({email});
         if(!usuario){
-            return res.status(400).json({msg: 'El usaurio no existe'});
+            return res.status(400).json({msg: 'El usuario no existe'});
         }
         //revisamos password
         const passCorrecto = await bcryptjs.compare(password, usuario.password);
@@ -41,5 +41,16 @@ exports.autenticarUsuario = async (req, res) => {
         });
     } catch (error) {
         console.log(error);
+    }
+}
+
+//obtiene que usuario esta autenticado
+exports.usuarioAutenticado = async(req, res) =>{
+    try {
+        const usuario = await Usuario.findById(req.usuario.id).select('-password');
+        res.json({usuario});
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({msg:"Hubo un error"});
     }
 }
